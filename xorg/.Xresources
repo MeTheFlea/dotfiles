@@ -1,0 +1,7 @@
+! urxvt
+URxvt*background: Black
+URxvt*foreground: White
+URxvt*scrollBar_right: true
+URxvt*urlLauncher: waterfox
+URxvt*font: xft:Source Code Pro:regular:size=11:antialias=true
+URxvt*boldFont: xft:Source Code Pro:bold:size=11:antialias=true
