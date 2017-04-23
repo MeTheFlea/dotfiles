@@ -1,0 +1,7 @@
+[core]
+	editor = vim
+	autocrlf = input
+[push]
+	default = simple
+[include]
+	path = .gitalias
