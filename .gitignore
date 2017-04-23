@@ -5,3 +5,6 @@
 
 #BSPWM
 /bspwm/.config/.mono
+
+#POLYBAR
+/polybar/.config/polybar/launch
