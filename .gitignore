@@ -2,3 +2,6 @@
 /vim/.vim/.netrwhist
 /vim/.vim/spell/
 /vim/.vim/plugged/
+
+#BSPWM
+/bspwm/.config/.mono
