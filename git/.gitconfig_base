@@ -1,3 +1,13 @@
+# --------------------------------------------------
+# include this into the real .gitconfig like this:
+# [include]
+# path = .gitconfig_base
+# --------------------------------------------------
+[core]
+	editor = vim
+	autocrlf = input
+[push]
+	default = simple
 [alias]
 	tree = log --graph --decorate --oneline
 	overview = !git tree --all -n$((`tput lines` - 15 ))
@@ -6,4 +16,3 @@
 	superclean = !git reset --hard && git clean -fd
 	amend = commit --amend --no-edit
 	rebase = rebase --autosquash
-
