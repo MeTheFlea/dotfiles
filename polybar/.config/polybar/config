@@ -53,7 +53,7 @@ font-3 = Source Code Pro:size=8:bold
 
 modules-left = bspwm
 modules-center = xwindow
-modules-right = date volume wlan battery
+modules-right = volume wlan battery date
 
 tray-position = right
 tray-detached = false
@@ -132,8 +132,8 @@ interval = 5
 date =
 date-alt = " %Y-%m-%d"
 
-time = %H:%M
-time-alt = %H:%M:%S
+time = %I:%M %P
+time-alt = %I:%M:%S %P
 
 format-prefix = 
 format-prefix-foreground = ${colors.foreground-alt}
