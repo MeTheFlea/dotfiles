@@ -11,6 +11,7 @@
 [alias]
 	tree = log --graph --decorate --oneline
 	overview = !git tree --all -n$((`tput lines` - 15 ))
+	ov = !git tree -n$((`tput lines` - 15 ))
 	diffshow = "!f() { COMMIT="$1"; shift; git difftool "$COMMIT^" "$COMMIT" "$@"; }; f"
 	merge-help = "!f() { git status | grep \""$1"\" | cut -c 19- | sed -e 's/^/\"/g' -e 's/$/\"/g'; }; f"
 	superclean = !git reset --hard && git clean -fd
