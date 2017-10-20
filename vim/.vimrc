@@ -33,25 +33,32 @@ colorscheme hybrid
 " ALIASES
 " -------------------
 " f1 for file explorer
-map <F1> :Ex<CR>
+nmap <F1> :Ex<CR>
 "write as sudo
 cmap w!! w !sudo tee > /dev/null %
+" -------------------
+" fzf
+nmap <C-P> :Files<CR>
+nmap <C-B> :Buffers<CR>
 
 " -------------------
 " PLUGINS
 " -------------------
 call plug#begin('~/.vim/plugged')
 Plug 'https://github.com/embear/vim-localvimrc.git'
-Plug 'https://github.com/ctrlpvim/ctrlp.vim.git'
 Plug 'https://github.com/airblade/vim-rooter.git'
+Plug 'https://github.com/junegunn/fzf', { 'dir': '~/.fzf' }
+Plug 'https://github.com/junegunn/fzf.vim'
+Plug 'https://github.com/itchyny/lightline.vim'
 call plug#end()
 
 " -------------------
 "lvimrc
 let g:localvimrc_sandbox = 0
 " -------------------
-" ctrlp
-set wildignore+=*.obj,*.pdb,*.ilk,*.o,*.d
+"lightline
+set noshowmode
+set laststatus=2
 " -------------------
 "rooter
 let g:rooter_silent_chdir = 1
