@@ -9,9 +9,9 @@
 [push]
 	default = simple
 [alias]
-	tree = log --graph --decorate --oneline
-	ov = !git tree -n$((`tput lines` - 15 ))
+	tree = log --graph --pretty=tformat:'%C(auto)%h%d %s %C(dim)<%an (%ar)>' --date=short
 	overview = !git tree --all -n$((`tput lines` - 15 ))
+	ov = !git tree -n$((`tput lines` - 15 ))
 	diffshow = "!f() { COMMIT="$1"; shift; git difftool "$COMMIT^" "$COMMIT" "$@"; }; f"
 	superclean = !git reset --hard && git clean -fd
 	amend = commit --amend --no-edit
