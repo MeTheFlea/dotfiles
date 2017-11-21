@@ -50,6 +50,7 @@ Plug 'https://github.com/airblade/vim-rooter.git'
 Plug 'https://github.com/junegunn/fzf', { 'dir': '~/.fzf' }
 Plug 'https://github.com/junegunn/fzf.vim'
 Plug 'https://github.com/itchyny/lightline.vim'
+Plug 'https://github.com/junegunn/goyo.vim'
 call plug#end()
 
 " -------------------
