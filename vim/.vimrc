@@ -40,6 +40,9 @@ cmap w!! w !sudo tee > /dev/null %
 " fzf
 nmap <C-P> :Files<CR>
 nmap <C-B> :Buffers<CR>
+" -------------------
+" goyo
+nmap <Leader>g :Goyo<CR>
 
 " -------------------
 " PLUGINS
@@ -51,8 +54,12 @@ Plug 'https://github.com/junegunn/fzf', { 'dir': '~/.fzf' }
 Plug 'https://github.com/junegunn/fzf.vim'
 Plug 'https://github.com/itchyny/lightline.vim'
 Plug 'https://github.com/junegunn/goyo.vim'
+Plug 'https://github.com/junegunn/vim-peekaboo'
 call plug#end()
 
+" -------------------
+"goyo
+let g:goyo_height = '95%'
 " -------------------
 "lvimrc
 let g:localvimrc_sandbox = 0
