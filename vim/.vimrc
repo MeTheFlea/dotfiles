@@ -6,7 +6,7 @@ endif
 scriptencoding utf-8
 set encoding=utf-8
 
-set nocp ai number relativenumber incsearch cindent showcmd
+set nocp ai number relativenumber incsearch hlsearch cindent showcmd
 set scrolloff=5
 
 "whitespace
@@ -43,6 +43,8 @@ nmap <C-B> :Buffers<CR>
 " -------------------
 " goyo
 nmap <Leader>g :Goyo<CR>
+" clear hl
+nmap <Leader>c :nohlsearch<CR>
 
 " -------------------
 " PLUGINS
@@ -70,7 +72,7 @@ set laststatus=2
 " -------------------
 "rooter
 let g:rooter_silent_chdir = 1
-let g:rooter_patterns = [ '.git/', '.lvimrc' ]
+let g:rooter_patterns = [ '.git/', '.lvimrc', '.sln' ]
 let g:rooter_use_lcd = 1
 " -------------------
 
