@@ -16,3 +16,4 @@
 	superclean = !git reset --hard && git clean -fd
 	amend = commit --amend --no-edit
 	rebase = rebase --autosquash
+	recommit = commit -C HEAD@{1}
