@@ -6,7 +6,7 @@ endif
 scriptencoding utf-8
 set encoding=utf-8
 
-set nocp ai number relativenumber incsearch hlsearch cindent showcmd
+set nocp ai number relativenumber incsearch hlsearch cindent showcmd ignorecase
 set scrolloff=5
 
 "whitespace
