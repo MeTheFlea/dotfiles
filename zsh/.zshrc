@@ -10,10 +10,9 @@ autoload -Uz compinit vcs_info
 compinit
 
 # git prompt
-precmd_vcs_info() { vcs_info }
-precmd_functions+=( precmd_vcs_info )
+source ~/.git-prompt.sh
 setopt prompt_subst
-PROMPT=$'%F{green}%n@%m%f %F{yellow}%B%~%b%f\ %F{cyan}$vcs_info_msg_0_%f
+PROMPT=$'%F{green}%n@%m%f %F{yellow}%B%~%b%f\ %F{cyan}$(__git_ps1 "(%s)")%f
 %# '
 zstyle ':vcs_info:git:*' formats '(%b)'
 
