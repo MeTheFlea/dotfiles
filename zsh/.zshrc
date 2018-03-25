@@ -13,7 +13,7 @@ compinit
 source ~/.git-prompt.sh
 setopt prompt_subst
 PROMPT=$'%F{green}%n@%m%f %F{yellow}%B%~%b%f\ %F{cyan}$(__git_ps1 "(%s)")%f
-%# '
+%(!.#.$) '
 zstyle ':vcs_info:git:*' formats '(%b)'
 
 # alias
