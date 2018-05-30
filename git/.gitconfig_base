@@ -17,3 +17,4 @@
 	amend = commit --amend --no-edit
 	rebase = rebase --autosquash
 	recommit = commit -C HEAD@{1}
+	hidden = !git ls-files -v | grep -v "^H"
