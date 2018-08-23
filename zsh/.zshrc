@@ -19,4 +19,4 @@ zstyle ':vcs_info:git:*' formats '(%b)'
 # alias
 alias ls="ls --color=auto"
 alias tmux="tmux -2"
-alias pacaur="pacaur --aur"
+alias pclear='sudo pacman -Rsn $(pacman -Qdtq)'
