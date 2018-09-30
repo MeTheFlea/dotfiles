@@ -25,10 +25,6 @@ filetype plugin indent on
 "disable autocomments
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
-"coloured theme stuff
-set t_Co=256
-colorscheme hybrid
-
 " -------------------
 " ALIASES
 " -------------------
@@ -50,6 +46,7 @@ nmap <Leader>c :nohlsearch<CR>
 " PLUGINS
 " -------------------
 call plug#begin('~/.vim/plugged')
+Plug 'https://github.com/w0ng/vim-hybrid.git'
 Plug 'https://github.com/embear/vim-localvimrc.git'
 Plug 'https://github.com/airblade/vim-rooter.git'
 Plug 'https://github.com/junegunn/fzf', { 'dir': '~/.fzf' }
@@ -57,8 +54,12 @@ Plug 'https://github.com/junegunn/fzf.vim'
 Plug 'https://github.com/itchyny/lightline.vim'
 Plug 'https://github.com/junegunn/goyo.vim'
 Plug 'https://github.com/junegunn/vim-peekaboo'
+Plug 'https://github.com/christoomey/vim-tmux-navigator.git'
 call plug#end()
-
+" -------------------
+"coloured theme stuff
+set t_Co=256
+colorscheme hybrid
 " -------------------
 "goyo
 let g:goyo_height = '95%'
@@ -74,5 +75,3 @@ set laststatus=2
 let g:rooter_silent_chdir = 1
 let g:rooter_patterns = [ '.git/', '.lvimrc', '.sln' ]
 let g:rooter_use_lcd = 1
-" -------------------
-
