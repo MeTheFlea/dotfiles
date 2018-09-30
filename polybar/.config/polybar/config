@@ -48,12 +48,11 @@ module-margin-right = 2
 
 font-0 = fixed:pixelsize=10;0
 font-1 = unifont:size=6:heavy:fontformat=truetype;-2
-font-2 = siji:pixelsize=10;0
-font-3 = Source Code Pro:size=8:bold
+font-2 = Source Code Pro:size=8:bold
 
 modules-left = bspwm
 modules-center = xwindow
-modules-right = volume wlan battery date
+modules-right = volume wlan battery date powermenu
 
 tray-position = right
 tray-detached = false
@@ -63,6 +62,19 @@ tray-transparent = false
 tray-background = ${colors.background}
 
 wm-restack = bspwm
+
+[module/powermenu]
+type = custom/menu
+format-spacing = 1
+expand-right = false
+menu-0-0 = poweroff
+menu-0-0-exec = systemctl poweroff
+menu-0-1 = suspend
+menu-0-1-exec = systemctl suspend
+
+label-open = power
+label-close = x
+label-separator = |
 
 [module/xwindow]
 type = internal/xwindow
@@ -96,7 +108,7 @@ type = internal/network
 interface = wlp3s0
 interval = 3.0
 
-format-connected = <ramp-signal> <label-connected>
+format-connected = <label-connected>
 format-connected-underline = #558855
 format-disconnected-underline = ${self.format-connected-underline}
 
@@ -104,20 +116,11 @@ label-connected = %essid%
 label-disconnected = %ifname% disconnected
 label-disconnected-foreground = ${colors.foreground-alt}
 
-ramp-signal-0 = 
-ramp-signal-1 = 
-ramp-signal-2 = 
-ramp-signal-3 = 
-ramp-signal-4 = 
-ramp-signal-foreground = ${colors.foreground-alt}
-
 [module/eth]
 type = internal/network
-interface = 
 interval = 3.0
 
 format-connected-underline = #55aa55
-format-connected-prefix = " "
 format-connected-foreground-foreground = ${colors.foreground-alt}
 label-connected = %local_ip%
 
@@ -129,26 +132,23 @@ label-disconnected-foreground = ${colors.foreground-alt}
 type = internal/date
 interval = 5
 
-date =
 date-alt = " %Y-%m-%d"
 
 time = %I:%M %P
 time-alt = %I:%M:%S %P
 
-format-prefix = 
 format-prefix-foreground = ${colors.foreground-alt}
 ;format-underline = #0a6cf5
 
 label = %date% %time%
 
 [module/volume]
-type = internal/volume
+type = internal/alsa
 
 format-volume = <label-volume> <bar-volume>
 label-volume = VOL
 label-volume-foreground = ${root.foreground}
 
-format-muted-prefix = " "
 format-muted-foreground = ${colors.foreground-alt}
 label-muted = sound muted
 
@@ -176,23 +176,12 @@ battery = BAT0
 adapter = AC0
 full-at = 98
 
-format-charging = <animation-charging> <label-charging>
+format-charging = <label-charging>
 format-charging-underline = #ffb52a
 
-format-discharging = <ramp-capacity> <label-discharging>
+format-discharging = <label-discharging>
 format-discharging-underline = ${self.format-charging-underline}
 
-format-full-prefix = " "
 format-full-prefix-foreground = ${colors.foreground-alt}
 format-full-underline = ${self.format-charging-underline}
 
-ramp-capacity-0 = 
-ramp-capacity-1 = 
-ramp-capacity-2 = 
-ramp-capacity-foreground = ${colors.foreground-alt}
-
-animation-charging-0 = 
-animation-charging-1 = 
-animation-charging-2 = 
-animation-charging-foreground = ${colors.foreground-alt}
-animation-charging-framerate = 750
