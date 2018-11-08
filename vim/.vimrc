@@ -41,7 +41,6 @@ nmap <C-B> :Buffers<CR>
 nmap <Leader>g :Goyo<CR>
 " clear hl
 nmap <Leader>c :nohlsearch<CR>
-
 " -------------------
 " PLUGINS
 " -------------------
@@ -55,12 +54,39 @@ Plug 'https://github.com/itchyny/lightline.vim'
 Plug 'https://github.com/junegunn/goyo.vim'
 Plug 'https://github.com/junegunn/vim-peekaboo'
 Plug 'https://github.com/christoomey/vim-tmux-navigator.git'
+Plug 'https://github.com/autozimu/LanguageClient-neovim', { 'branch': 'next', 'do': 'bash install.sh' }
+
+if has('nvim')
+	Plug 'https://github.com/Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+else
+	Plug 'https://github.com/Shougo/deoplete.nvim'
+	Plug 'https://github.com/roxma/nvim-yarp'
+	Plug 'https://github.com/roxma/vim-hug-neovim-rpc'
+endif
+
 call plug#end()
+" -------------------
+"languageclient
+set hidden
+
+let g:LanguageClient_serverCommands = {
+			\ 'cpp': ['clangd'],
+			\ 'javascript': ['javascript-typescript-stdio'],
+			\ }
+" -------------------
+"deoplete
+let g:deoplete#enable_at_startup = 1
+set pyxversion=3
+imap <expr> <Tab> pumvisible() ? deoplete#close_popup() : "\<Tab>"
+call deoplete#custom#option({
+\ 'auto_complete_delay': 0,
+\ })
+<
 " -------------------
 "coloured theme stuff
 set t_Co=256
-colorscheme hybrid
 set background=dark
+colorscheme hybrid
 " -------------------
 "goyo
 let g:goyo_height = '95%'
