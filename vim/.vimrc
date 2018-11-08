@@ -60,6 +60,7 @@ call plug#end()
 "coloured theme stuff
 set t_Co=256
 colorscheme hybrid
+set background=dark
 " -------------------
 "goyo
 let g:goyo_height = '95%'
