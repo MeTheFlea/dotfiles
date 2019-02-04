@@ -54,6 +54,7 @@ Plug 'https://github.com/junegunn/fzf.vim'
 Plug 'https://github.com/itchyny/lightline.vim'
 Plug 'https://github.com/junegunn/goyo.vim'
 Plug 'https://github.com/junegunn/vim-peekaboo'
+Plug 'https://github.com/vimwiki/vimwiki'
 Plug 'https://github.com/christoomey/vim-tmux-navigator.git'
 Plug 'https://github.com/autozimu/LanguageClient-neovim', { 'branch': 'next', 'do': 'bash install.sh' }
 
@@ -94,6 +95,9 @@ let g:goyo_height = '95%'
 " -------------------
 "lvimrc
 let g:localvimrc_sandbox = 0
+" -------------------
+"vimwiki
+let g:vimwiki_list = [{'path': '~/wiki/raw/', 'path_html': '~/wiki/html/'}]
 " -------------------
 "lightline
 set noshowmode
