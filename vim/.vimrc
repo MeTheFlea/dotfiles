@@ -29,18 +29,19 @@ autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 " ALIASES
 " -------------------
 " f1 for file explorer
-nmap <F1> :Ex<CR>
+nnoremap <F1> :Ex<CR>
 "write as sudo
-cmap w!! w !sudo tee > /dev/null %
+cnoremap w!! w !sudo tee > /dev/null %
 " -------------------
 " fzf
-nmap <C-P> :Files<CR>
-nmap <C-B> :Buffers<CR>
+nnoremap <C-P> :Files<CR>
+nnoremap <C-B> :Buffers<CR>
 " -------------------
 " goyo
-nmap <Leader>g :Goyo<CR>
+nnoremap <Leader>g :Goyo<CR>
 " clear hl
-nmap <Leader>c :nohlsearch<CR>
+nnoremap <Leader>c :nohlsearch<CR>
+
 " -------------------
 " PLUGINS
 " -------------------
