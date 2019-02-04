@@ -95,6 +95,7 @@ let g:goyo_height = '95%'
 " -------------------
 "lvimrc
 let g:localvimrc_sandbox = 0
+let g:localvimrc_ask = 0
 " -------------------
 "vimwiki
 let g:vimwiki_list = [{'path': '~/wiki/raw/', 'path_html': '~/wiki/html/'}]
