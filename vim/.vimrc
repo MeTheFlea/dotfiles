@@ -6,7 +6,7 @@ endif
 scriptencoding utf-8
 set encoding=utf-8
 
-set nocp ai number relativenumber incsearch hlsearch cindent showcmd ignorecase
+set nocp ai number relativenumber incsearch hlsearch cindent showcmd ignorecase nocompatible
 set scrolloff=5
 
 "whitespace
@@ -21,6 +21,8 @@ set tabstop=4 shiftwidth=4 noexpandtab softtabstop=0
 
 syntax on
 filetype plugin indent on
+
+set omnifunc=syntaxcomplete#Complete
 
 "disable autocomments
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
