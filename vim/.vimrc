@@ -83,3 +83,8 @@ set laststatus=2
 let g:rooter_silent_chdir = 1
 let g:rooter_patterns = [ '.git/', '.lvimrc', '.sln' ]
 let g:rooter_use_lcd = 1
+
+"load local vimrc
+if filereadable(glob("~/.vimrc.local"))
+	source ~/.vimrc.local
+endif
