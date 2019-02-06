@@ -66,7 +66,7 @@ set background=dark
 colorscheme hybrid
 " -------------------
 "goyo
-let g:goyo_height = '95%'
+let g:goyo_height = '90%'
 " -------------------
 "lvimrc
 let g:localvimrc_sandbox = 0
