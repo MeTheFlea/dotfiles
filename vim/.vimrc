@@ -73,7 +73,7 @@ let g:localvimrc_sandbox = 0
 let g:localvimrc_ask = 0
 " -------------------
 "vimwiki
-let g:vimwiki_list = [{'path': '~/wiki/raw/', 'path_html': '~/wiki/html/'}]
+let g:vimwiki_list = [{'path': '~/wiki/', 'syntax': 'markdown', 'ext': '.md'}]
 " -------------------
 "lightline
 set noshowmode
