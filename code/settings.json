@@ -16,9 +16,18 @@
   "editor.renderControlCharacters": true,
   "editor.renderWhitespace": "all",
 
+  "editor.quickSuggestions": {
+    "other": false,
+    "comments": false,
+    "strings": false
+  },
+  "editor.quickSuggestionsDelay": 0,
+  "editor.snippetSuggestions": "none",
+
   "editor.suggest.localityBonus": true,
   // -----
   "workbench.editor.restoreViewState": false,
+  "workbench.editor.enablePreview": false,
   "workbench.enableExperiments": false,
   "workbench.settings.enableNaturalLanguageSearch": false,
   "workbench.statusBar.feedback.visible": false,
