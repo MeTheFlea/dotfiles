@@ -10,6 +10,28 @@ super + Return
 super + space
 	dmenu_run -b -i -fn "Hack"
 
+# special keys
+XF86AudioRaiseVolume
+	amixer -q sset Master 10%+
+
+XF86AudioLowerVolume
+	amixer -q sset Master 10%-
+
+XF86AudioMute
+	amixer -q set Master playback toggle
+
+XF86MonBrightnessDown
+	xbacklight -dec 10
+
+XF86MonBrightnessUp
+	xbacklight -inc 10
+
+XF86KbdBrightnessDown
+	xbacklight -ctrl asus::kbd_backlight -dec 50
+
+XF86KbdBrightnessUp
+	xbacklight -ctrl asus::kbd_backlight -inc 50
+
 # make sxhkd reload its configuration files:
 super + Escape
 	pkill -USR1 -x sxhkd
