@@ -2,8 +2,8 @@
 
 for var in "$@"
 do
-	if [ "$var" = "code" ]; then
-		stow --stow --target=${HOME}/.config/Code\ -\ OSS/User $var
+	if false; then
+		echo "TODO: fill in with special cases"
 	else
 		stow --stow --target=${HOME} $var
 	fi
