@@ -46,7 +46,7 @@
   // ---
   "update.enableWindowsBackgroundUpdates": false,
   // ---
-  // "terminal.external.linuxExec": "xterm",
+  "terminal.external.linuxExec": "urxvt",
   // ---
   "telemetry.enableCrashReporter": false,
   "telemetry.enableTelemetry": false,
