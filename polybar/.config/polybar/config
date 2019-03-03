@@ -48,7 +48,7 @@ module-margin-right = 2
 
 font-0 = fixed:pixelsize=10;0
 font-1 = unifont:size=6:heavy:fontformat=truetype;-2
-font-2 = Source Code Pro:size=8:bold
+font-2 = Hack:size=8:bold
 
 modules-left = bspwm
 modules-center = xwindow
