@@ -31,6 +31,7 @@
   "workbench.enableExperiments": false,
   "workbench.settings.enableNaturalLanguageSearch": false,
   "workbench.statusBar.feedback.visible": false,
+  "workbench.startupEditor": "none",
   "workbench.tree.horizontalScrolling": true,
   "workbench.view.alwaysShowHeaderActions": true,
   // ---
