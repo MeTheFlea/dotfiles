@@ -1,5 +1,8 @@
 #!/bin/sh
 
+# NVIDIA optimus stuff
+# disabling intel graphics
+xrandr --setprovideroutputsource modesetting NVIDIA-0
 xrandr --auto
 
 userresources=$HOME/.Xresources
