@@ -47,6 +47,8 @@ https://wiki.archlinux.org/index.php/Advanced_Linux_Sound_Architecture#Unmuting_
 if you want to run something that needs an X-server, add DISPLAY=:0 (correct display) before the script you want to run (e.g. change bg with feh)
 
 # Mounting with rclone
+setup a user service to mount whatever on inital login
+
 Use a cache backend, example config:
 
 [dropbox-cache]
