@@ -56,6 +56,7 @@ Plug 'https://github.com/junegunn/fzf.vim'
 Plug 'https://github.com/itchyny/lightline.vim'
 Plug 'https://github.com/junegunn/goyo.vim'
 Plug 'https://github.com/junegunn/vim-peekaboo'
+Plug 'https://github.com/sheerun/vim-polyglot'
 Plug 'https://github.com/vimwiki/vimwiki'
 Plug 'https://github.com/christoomey/vim-tmux-navigator.git'
 call plug#end()
