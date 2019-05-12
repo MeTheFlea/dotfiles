@@ -23,6 +23,7 @@ syntax on
 filetype plugin indent on
 
 set omnifunc=syntaxcomplete#Complete
+set tags=./tags;/
 
 "disable autocomments
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
@@ -37,7 +38,10 @@ cnoremap w!! w !sudo tee > /dev/null %
 " -------------------
 " fzf
 nnoremap <C-P> :Files<CR>
-nnoremap <C-B> :Buffers<CR>
+nnoremap <C-N> :Tags<CR>
+nnoremap <C-M> :BTags<CR>
+nnoremap <S-Tab> :Buffers<CR>
+nnoremap <Leader>p :silent !ctags -R .<CR>
 " -------------------
 " goyo
 nnoremap <Leader>g :Goyo<CR>
@@ -51,7 +55,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'https://github.com/w0ng/vim-hybrid.git'
 Plug 'https://github.com/embear/vim-localvimrc.git'
 Plug 'https://github.com/airblade/vim-rooter.git'
-Plug 'https://github.com/junegunn/fzf', { 'dir': '~/.fzf' }
+Plug 'https://github.com/junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'https://github.com/junegunn/fzf.vim'
 Plug 'https://github.com/itchyny/lightline.vim'
 Plug 'https://github.com/junegunn/goyo.vim'
