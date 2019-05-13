@@ -12,6 +12,8 @@
   "editor.minimap.maxColumn": 80,
   "editor.minimap.renderCharacters": false,
   "editor.minimap.showSlider": "always",
+  "editor.fontFamily": "Hack",
+  "editor.fontSize": 12,
 
   "editor.renderControlCharacters": true,
   "editor.renderWhitespace": "all",
@@ -52,4 +54,9 @@
   "telemetry.enableTelemetry": false,
   // ---
   "csharp.referencesCodeLens.enabled": false,
+  "window.zoomLevel": 0,
+
+  // ---
+  "git.autoRepositoryDetection": false,
+  "workbench.startupEditor": "newUntitledFile",
 }
