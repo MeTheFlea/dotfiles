@@ -55,7 +55,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'https://github.com/w0ng/vim-hybrid.git'
 Plug 'https://github.com/embear/vim-localvimrc.git'
 Plug 'https://github.com/airblade/vim-rooter.git'
-Plug 'https://github.com/junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'https://github.com/junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
 Plug 'https://github.com/junegunn/fzf.vim'
 Plug 'https://github.com/itchyny/lightline.vim'
 Plug 'https://github.com/junegunn/goyo.vim'
