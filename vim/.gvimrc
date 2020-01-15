@@ -9,3 +9,4 @@ set guioptions-=r
 set guioptions-=L
 set guioptions-=e
 
+autocmd GUIEnter * set vb t_vb=
