@@ -63,6 +63,7 @@ Plug 'https://github.com/junegunn/vim-peekaboo'
 Plug 'https://github.com/sheerun/vim-polyglot'
 Plug 'https://github.com/vimwiki/vimwiki'
 Plug 'https://github.com/christoomey/vim-tmux-navigator.git'
+Plug 'https://github.com/tpope/vim-eunuch.git'
 call plug#end()
 " -------------------
 "coloured theme stuff
