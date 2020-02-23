@@ -1,0 +1,5 @@
+use cmd as administrator and run:
+
+e.g.
+mklink "%USERPROFILE%/.vimrc" "%USERPROFILE%/dotfiles/vim/.vimrc"
+mklink /D "%USERPROFILE%/.vim" "%USERPROFILE%/dotfiles/vim/.vim"
