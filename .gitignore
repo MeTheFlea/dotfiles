@@ -8,3 +8,8 @@
 
 #POLYBAR
 /polybar/.config/polybar/launch
+
+#RUST
+/rust/.cargo/bin
+/rust/.cargo/registry
+/rust/.cargo/.package-cache
