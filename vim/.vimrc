@@ -100,6 +100,7 @@ let g:ale_linters = {
 \}
 nnoremap <silent> gd :ALEGoToDefinition<CR>
 nnoremap <silent> <F2> :ALERename<CR>
+nnoremap <silent> <C-Space> :ALEHover<CR>
 " -------------------
 "goyo
 let g:goyo_height = '90%'
