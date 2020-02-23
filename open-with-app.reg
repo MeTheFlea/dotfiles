@@ -1,0 +1,26 @@
+Windows Registry Editor Version 5.00
+; Open file with App
+; Example Location "D:\\app.exe"
+; Icon values are optional
+
+[HKEY_CLASSES_ROOT\*\shell\Open with App]
+"Icon"="\"D:\\app.exe\""
+
+[HKEY_CLASSES_ROOT\*\shell\Open with App\command]
+@="\"D:\\app.exe\" \"%V\""
+
+; This will make it appear when you right click ON a folder
+
+[HKEY_CLASSES_ROOT\Directory\shell\Open with App]
+"Icon"="\"D:\\app.exe\""
+
+[HKEY_CLASSES_ROOT\Directory\shell\Open with App\command]
+@="\"D:\\app.exe\" \"%V\""
+
+; This will make it appear when you right click INSIDE a folder
+
+[HKEY_CLASSES_ROOT\Directory\Background\shell\Open with App]
+"Icon"="\"D:\\app.exe\""
+
+[HKEY_CLASSES_ROOT\Directory\Background\shell\Open with App\command]
+"Icon"="\"D:\\app.exe\""
