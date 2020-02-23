@@ -1,4 +1,4 @@
-" can use same filenames on all platforms
+"can use same filenames on all platforms
 if has('win32') || has('win64')
 	set runtimepath=$HOME/.vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,$HOME/.vim/after
 endif
@@ -6,7 +6,7 @@ endif
 scriptencoding utf-8
 set encoding=utf-8
 
-set nocp ai number relativenumber incsearch hlsearch cindent showcmd ignorecase nocompatible
+set nocp ai number incsearch hlsearch cindent showcmd ignorecase nocompatible
 set scrolloff=5
 
 "whitespace
@@ -22,10 +22,9 @@ set tabstop=4 shiftwidth=4 noexpandtab softtabstop=0
 syntax on
 filetype plugin indent on
 
-set omnifunc=syntaxcomplete#Complete
 set tags=./tags;/
 
-"disable autocomments
+"disable defaulting to a commented line when pressing enter in a comment
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
 " -------------------
@@ -40,36 +39,67 @@ cnoremap w!! w !sudo tee > /dev/null %
 nnoremap <C-P> :Files<CR>
 nnoremap <C-N> :Tags<CR>
 nnoremap <C-M> :BTags<CR>
-nnoremap <S-Tab> :Buffers<CR>
+nnoremap <C-B> :Buffers<CR>
 nnoremap <Leader>p :silent !ctags -R .<CR>
 " -------------------
 " goyo
 nnoremap <Leader>g :Goyo<CR>
-" clear hl
-nnoremap <Leader>c :nohlsearch<CR>
+" clear search highlighting
+nnoremap <silent> <Leader>c :nohlsearch<CR>
 
 " -------------------
 " PLUGINS
 " -------------------
 call plug#begin('~/.vim/plugged')
-Plug 'https://github.com/w0ng/vim-hybrid.git'
-Plug 'https://github.com/embear/vim-localvimrc.git'
-Plug 'https://github.com/airblade/vim-rooter.git'
-Plug 'https://github.com/junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
-Plug 'https://github.com/junegunn/fzf.vim'
-Plug 'https://github.com/itchyny/lightline.vim'
-Plug 'https://github.com/junegunn/goyo.vim'
-Plug 'https://github.com/junegunn/vim-peekaboo'
-Plug 'https://github.com/sheerun/vim-polyglot'
-Plug 'https://github.com/vimwiki/vimwiki'
-Plug 'https://github.com/christoomey/vim-tmux-navigator.git'
-Plug 'https://github.com/tpope/vim-eunuch.git'
+Plug 'MeTheFlea/base16-vim'
+Plug 'embear/vim-localvimrc'
+Plug 'xiaoyaoliu/vim-rooter'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+Plug 'itchyny/lightline.vim'
+Plug 'junegunn/goyo.vim'
+Plug 'junegunn/vim-peekaboo'
+Plug 'sheerun/vim-polyglot'
+Plug 'vimwiki/vimwiki'
+Plug 'christoomey/vim-tmux-navigator'
+Plug 'tpope/vim-eunuch'
+Plug 'rust-lang/rust.vim'
+Plug 'dense-analysis/ale'
+if has('nvim')
+  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+else
+  Plug 'Shougo/deoplete.nvim'
+  Plug 'roxma/nvim-yarp'
+  Plug 'roxma/vim-hug-neovim-rpc'
+endif
 call plug#end()
 " -------------------
 "coloured theme stuff
 set t_Co=256
-set background=dark
-colorscheme hybrid
+colorscheme base16-atelier-seaside
+" -------------------
+"deoplete
+let g:deoplete#enable_at_startup = 1
+call deoplete#custom#option({
+	\ 'auto_complete': 1,
+	\ 'auto_complete_popup': "manual",
+	\ 'sources': {
+	\ '_': ['ale'],
+	\}
+\ })
+inoremap <expr> <C-Space> deoplete#complete()
+" -------------------
+"ALE
+set signcolumn=yes
+let g:ale_set_quickfix = 1
+let g:ale_set_loclist = 0
+let g:ale_open_list = 1
+let g:ale_lint_on_text_changed = 'never'
+let g:ale_linters = {
+	\ 'rust': ['rls'],
+\}
+nnoremap <silent> gd :ALEGoToDefinition<CR>
+nnoremap <silent> <F2> :ALERename<CR>
 " -------------------
 "goyo
 let g:goyo_height = '90%'
@@ -87,9 +117,9 @@ set laststatus=2
 " -------------------
 "rooter
 let g:rooter_silent_chdir = 1
-let g:rooter_patterns = [ '.git/', '.lvimrc', '.sln' ]
+let g:rooter_patterns = [ '.git/', '.sln', '.lvimrc', 'Cargo.toml' ]
 let g:rooter_use_lcd = 1
-
+" -------------------
 "load local vimrc
 if filereadable(glob("~/.vimrc.local"))
 	source ~/.vimrc.local
