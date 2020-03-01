@@ -107,7 +107,13 @@ let g:rooter_patterns = [ '.git/', '.sln', '.lvimrc', 'Cargo.toml' ]
 let g:rooter_use_lcd = 1
 let g:rooter_check_all_patterns = 1
 " -------------------
+
+function! SourceIfExists( filename )
+	if filereadable(glob(a:filename))
+		exe "source " . glob(a:filename)
+	endif
+endfunction
+autocmd Filetype rust call SourceIfExists( "~/.vimrc.rust" )
+
 "load local vimrc
-if filereadable(glob("~/.vimrc.local"))
-	source ~/.vimrc.local
-endif
+call SourceIfExists( "~/.vimrc.local" )
