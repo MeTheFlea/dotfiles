@@ -53,7 +53,7 @@ nnoremap <silent> <Leader>c :nohlsearch<CR>
 call plug#begin('~/.vim/plugged')
 Plug 'MeTheFlea/base16-vim'
 Plug 'embear/vim-localvimrc'
-Plug 'xiaoyaoliu/vim-rooter'
+Plug 'MeTheFlea/vim-rooter'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'itchyny/lightline.vim'
@@ -120,6 +120,7 @@ set laststatus=2
 let g:rooter_silent_chdir = 1
 let g:rooter_patterns = [ '.git/', '.sln', '.lvimrc', 'Cargo.toml' ]
 let g:rooter_use_lcd = 1
+let g:rooter_check_all_patterns = 1
 " -------------------
 "load local vimrc
 if filereadable(glob("~/.vimrc.local"))
