@@ -60,32 +60,18 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'tpope/vim-eunuch'
 Plug 'rust-lang/rust.vim'
 Plug 'dense-analysis/ale'
-if has('nvim')
-  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-else
-  Plug 'Shougo/deoplete.nvim'
-  Plug 'roxma/nvim-yarp'
-  Plug 'roxma/vim-hug-neovim-rpc'
-endif
 call plug#end()
 " -------------------
 "coloured theme stuff
 set t_Co=256
 colorscheme base16-atelier-seaside
 " -------------------
-"deoplete
-let g:deoplete#enable_at_startup = 1
-call deoplete#custom#option({
-	\ 'auto_complete': 1,
-	\ 'auto_complete_popup': "manual",
-	\ 'sources': {
-	\ '_': ['ale'],
-	\}
-\ })
-inoremap <expr> <C-Space> deoplete#complete()
 " -------------------
-"ALE
+"ale
+inoremap <silent> <C-Space> <C-\><C-O>:ALEComplete<CR>
+autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
 set signcolumn=yes
+set splitbelow
 let g:ale_set_quickfix = 1
 let g:ale_set_loclist = 0
 let g:ale_open_list = 1
