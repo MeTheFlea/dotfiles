@@ -60,12 +60,15 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'tpope/vim-eunuch'
 Plug 'rust-lang/rust.vim'
 Plug 'dense-analysis/ale'
+Plug 'OmniSharp/omnisharp-vim'
 call plug#end()
 " -------------------
 "coloured theme stuff
 set t_Co=256
 colorscheme base16-atelier-seaside
 " -------------------
+"omnisharp
+let g:OmniSharp_server_stdio = 1
 " -------------------
 "ale
 inoremap <silent> <C-Space> <C-\><C-O>:ALEComplete<CR>
@@ -78,6 +81,7 @@ let g:ale_open_list = 1
 let g:ale_lint_on_text_changed = 'never'
 let g:ale_linters = {
 	\ 'rust': ['rls'],
+	\ 'cs': ['OmniSharp'],
 \}
 nnoremap <silent> gd :ALEGoToDefinition<CR>
 nnoremap <silent> <F2> :ALERename<CR>
