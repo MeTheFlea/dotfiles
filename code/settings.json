@@ -58,4 +58,18 @@
 
     // ---
     "git.autoRepositoryDetection": false,
+
+    "remote.SSH.path": "D:/msys64/usr/bin/ssh.exe",
+
+    "terminal.integrated.shell.windows": "D:\\msys64\\usr\\bin\\bash.exe",
+    "terminal.integrated.shellArgs.windows": [
+        "--login",
+    ],
+    "terminal.integrated.env.windows": {
+        "CHERE_INVOKING": "1",
+        "MSYSTEM": "MINGW64",
+    },
+
+    // ---
+    "html.autoClosingTags": false
   }
