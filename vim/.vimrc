@@ -47,6 +47,7 @@ nnoremap <silent> <Leader>c :nohlsearch<CR>
 " -------------------
 call plug#begin('~/.vim/plugged')
 Plug 'MeTheFlea/base16-vim'
+Plug 'godlygeek/csapprox'
 Plug 'embear/vim-localvimrc'
 Plug 'MeTheFlea/vim-rooter'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
