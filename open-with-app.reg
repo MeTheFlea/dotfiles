@@ -1,26 +1,32 @@
 Windows Registry Editor Version 5.00
-; Open file with App
+; Open file with app
 ; Example Location "D:\\app.exe"
 ; Icon values are optional
+; Add:
+; "Extended"=""
+; to the non-command key if you want the menu to only be visible on shift right click
 
-[HKEY_CLASSES_ROOT\*\shell\Open with App]
-"Icon"="\"D:\\app.exe\""
+[HKEY_CLASSES_ROOT\*\shell\app]
+@="Open app here"
+"Icon"="D:\\app.exe"
 
-[HKEY_CLASSES_ROOT\*\shell\Open with App\command]
-@="\"D:\\app.exe\" \"%V\""
+[HKEY_CLASSES_ROOT\*\shell\app\command]
+@="D:\\app.exe \"%V/\""
 
 ; This will make it appear when you right click ON a folder
 
-[HKEY_CLASSES_ROOT\Directory\shell\Open with App]
-"Icon"="\"D:\\app.exe\""
+[HKEY_CLASSES_ROOT\Directory\shell\app]
+@="Open app here"
+"Icon"="D:\\app.exe"
 
-[HKEY_CLASSES_ROOT\Directory\shell\Open with App\command]
-@="\"D:\\app.exe\" \"%V\""
+[HKEY_CLASSES_ROOT\Directory\shell\app\command]
+@="D:\\app.exe \"%V/\""
 
 ; This will make it appear when you right click INSIDE a folder
 
-[HKEY_CLASSES_ROOT\Directory\Background\shell\Open with App]
-"Icon"="\"D:\\app.exe\""
+[HKEY_CLASSES_ROOT\Directory\Background\shell\app]
+@="Open app here"
+"Icon"="D:\\app.exe"
 
-[HKEY_CLASSES_ROOT\Directory\Background\shell\Open with App\command]
-"Icon"="\"D:\\app.exe\""
+[HKEY_CLASSES_ROOT\Directory\Background\shell\msys2\command]
+@="D:\\app.exe \"%V/\""
