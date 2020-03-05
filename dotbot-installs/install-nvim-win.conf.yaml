@@ -1,0 +1,10 @@
+- defaults:
+    link:
+      relink: true
+      force: true
+
+- clean: ['~']
+
+- link:
+    $LOCALAPPDATA/nvim/ginit.vim: ../nvim/ginit.vim
+    $LOCALAPPDATA/nvim/init.vim: ../nvim/init.vim

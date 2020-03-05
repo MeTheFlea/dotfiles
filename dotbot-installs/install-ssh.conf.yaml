@@ -1,0 +1,13 @@
+- defaults:
+    link:
+      relink: true
+      force: true
+
+- clean: ['~']
+
+- link:
+    ~/.ssh/config: ../ssh/config
+
+- shell:
+  - command: if [[ ! -f ~/.ssh/config.local ]]; then touch ~/.ssh/config.local; fi
+    stderr: true

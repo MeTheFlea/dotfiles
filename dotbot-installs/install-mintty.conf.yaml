@@ -1,0 +1,9 @@
+- defaults:
+    link:
+      relink: true
+      force: true
+
+- clean: ['~']
+
+- link:
+    ~/.minttyrc: ../mintty/.minttyrc

@@ -13,3 +13,5 @@
 /rust/.cargo/bin
 /rust/.cargo/registry
 /rust/.cargo/.package-cache
+/rust/.cargo/.crates.toml
+/rust/.cargo/.crates2.json
