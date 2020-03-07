@@ -2,7 +2,10 @@ BoldAsFont=yes
 Term=xterm-256color
 CursorType=block
 BoldAsColour=no
+Columns=140
+Rows=40
 
+#https://github.com/iamthad/base16-mintty/blob/master/mintty/base16-atelier-seaside-256.minttyrc
 ForegroundColour=140,166,140
 BackgroundColour=19,21,19
 CursorColour=140,166,140
