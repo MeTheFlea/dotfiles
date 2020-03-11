@@ -104,7 +104,7 @@ set laststatus=2
 " -------------------
 "rooter
 let g:rooter_silent_chdir = 1
-let g:rooter_patterns = [ '.git/', '.sln', '.lvimrc', 'Cargo.toml' ]
+let g:rooter_patterns = [ '.git/', '.sln', '.lvimrc', 'Cargo.lock' ]
 let g:rooter_use_lcd = 1
 let g:rooter_check_all_patterns = 1
 " -------------------
