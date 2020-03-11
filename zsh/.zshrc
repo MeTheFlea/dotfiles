@@ -2,8 +2,8 @@ HISTFILE=~/.zsh_history
 HISTSIZE=1000
 SAVEHIST=1000
 
-setopt appendhistory beep nomatch
-unsetopt autocd extendedglob
+setopt appendhistory beep 
+unsetopt autocd extendedglob nomatch
 bindkey -e
 
 autoload -Uz compinit vcs_info
