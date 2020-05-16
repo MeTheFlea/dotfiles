@@ -7,70 +7,116 @@
 ;
 ;=====================================================
 
-[colors]
-background = #AA222222
-background-alt = #AA444444
+[colours]
+; Pico 8 Palette
+black = #000000
+dark-blue = #1D2B53
+dark-purple = #7E2553
+dark-green = #008751
+brown = #AB5236
+dark-grey = #5F574F
+light-grey = #C2C3C7
+white = #FFF1E8
+red = #FF004D
+orange = #FFA300
+yellow = #FFEC27
+green = #00E436
+blue = #29ADFF
+lavender = #83769C
+pink = #FF77A8
+light-peach = #FFCCAA
 
-foreground = #FDFDFD
-foreground-alt = #888888
-
-primary = #ffb52a
-secondary = #e60053
-alert = #bd2c40
+background = #881D2B53
+foreground = ${self.white}
+foreground-disabled = ${self.light-grey}
+primary = ${self.light-peach}
+alert = ${self.red}
 
 [global/wm]
 margin-top = 0
 margin-bottom = 0
 
-[bar/laptop]
-;monitor = ${env:MONITOR:HDMI-1}
-width = 100%
+[bar/common]
 height = 24
-offset-x = 0
-offset-y = 0
+offset-y = 16
+radius = 4
 
-background = ${colors.background}
-foreground = ${colors.foreground}
-
+background = ${colours.background}
+foreground = ${colours.foreground}
 overline-size = 2
-overline-color = #f00
 underline-size = 2
-underline-color = #00f
 
 border-bottom-size = 0
-;border-bottom-color = #333
+wm-restack = bspwm
 
-spacing = 1
-padding-left = 0
+spacing = 0
+padding-left = 2
 padding-right = 2
 module-margin-left = 1
-module-margin-right = 2
+module-margin-right = 1
 
-font-0 = fixed:pixelsize=10;0
-font-1 = unifont:size=6:heavy:fontformat=truetype;-2
-font-2 = Hack:size=8:bold
+font-0 = Hack:size=8:bold;1
+font-1 = Hack:size=8:bold;1
+font-2 = FontAwesome:style=Regular:size=12;2
 
+[bar/left]
+inherit = bar/common
+width = 250
+offset-x = 5%
 modules-left = bspwm
+
+[bar/middle]
+inherit = bar/common
+width = 40%
+offset-x = 30%
+
 modules-center = xwindow
-modules-right = volume wlan battery date powermenu
+modules-left = wlan nixstatus
 
 tray-position = right
 tray-detached = false
 tray-padding = 2
 tray-maxsize = 16
-tray-transparent = false
-tray-background = ${colors.background}
+tray-background = ${colours.background}
 
-wm-restack = bspwm
+[bar/right]
+inherit = bar/common
+width = 15%
+offset-x = 80%
+
+modules-left = battery volume backlight
+;modules-left = volume backlight battery 
+modules-right = date
+
+label = %output%
+
+[module/backlight]
+type = internal/backlight
+card = intel_backlight
+
+format = <ramp> <label>
+label = %percentage%%
+
+ramp-0 = 
+ramp-1 = 
+ramp-2 = 
+ramp-3 = 
+ramp-4 = 
+
+[module/nixstatus]
+type = custom/script
+tail = true
+exec = /run/current-system/sw/bin/monitor-nix-version "" "" ""
+label = %output%
 
 [module/powermenu]
 type = custom/menu
 format-spacing = 1
 expand-right = false
 menu-0-0 = poweroff
-menu-0-0-exec = systemctl poweroff
+menu-0-0-exec = poweroff
 menu-0-1 = suspend
-menu-0-1-exec = systemctl suspend
+menu-0-1-exec = suspend
 
 label-open = power
 label-close = x
@@ -79,7 +125,7 @@ label-separator = |
 [module/xwindow]
 type = internal/xwindow
 label = %title:0:100:...%
-label-font = 4
+label-font = 1
 
 [module/bspwm]
 type = internal/bspwm
@@ -87,46 +133,34 @@ ws-icon-default = x
 
 enable-scroll = false
 
-label-focused = %index%
-label-focused-background = ${colors.background-alt}
-label-focused-underline= ${colors.primary}
-label-focused-padding = 2
+label-focused = 
+label-focused-background = ${colours.background}
+label-focused-foreground = ${colours.primary}
+label-focused-padding = 1
 
-label-occupied = %index%
-label-occupied-padding = 2
+label-occupied = 
+label-occupied-padding = 1
 
-label-urgent = %index%!
-label-urgent-background = ${colors.alert}
-label-urgent-padding = 2
+label-urgent = 
+label-urgent-background = ${colours.alert}
+label-urgent-padding = 1
 
-label-empty = %index%
-label-empty-foreground = ${colors.foreground-alt}
-label-empty-padding = 2
+label-empty = 
+label-empty-foreground = ${colours.foreground}
+label-empty-padding = 1
 
 [module/wlan]
 type = internal/network
-interface = wlp3s0
+interface = wlp7s0
 interval = 3.0
 
 format-connected = <label-connected>
-format-connected-underline = #558855
-format-disconnected-underline = ${self.format-connected-underline}
 
-label-connected = %essid%
-label-disconnected = %ifname% disconnected
-label-disconnected-foreground = ${colors.foreground-alt}
-
-[module/eth]
-type = internal/network
-interval = 3.0
-
-format-connected-underline = #55aa55
-format-connected-foreground-foreground = ${colors.foreground-alt}
-label-connected = %local_ip%
-
-format-disconnected-underline = ${self.format-connected-underline}
-label-disconnected = %ifname% disconnected
-label-disconnected-foreground = ${colors.foreground-alt}
+;label-connected = %essid%
+;label-disconnected = %ifname% disconnected
+label-connected = 
+label-disconnected = 
+label-disconnected-foreground = ${colours.foreground}
 
 [module/date]
 type = internal/date
@@ -137,38 +171,24 @@ date-alt = " %Y-%m-%d"
 time = %I:%M %P
 time-alt = %I:%M:%S %P
 
-format-prefix-foreground = ${colors.foreground-alt}
-;format-underline = #0a6cf5
+format-prefix-foreground = ${colours.foreground}
 
 label = %date% %time%
 
 [module/volume]
 type = internal/alsa
 
-format-volume = <label-volume> <bar-volume>
-label-volume = VOL
+format-volume = <ramp-volume> <label-volume>
+label-volume = %percentage%%
 label-volume-foreground = ${root.foreground}
 
-format-muted-foreground = ${colors.foreground-alt}
-label-muted = sound muted
+ramp-volume-0 = 
+ramp-volume-1 = 
+ramp-volume-2 = 
 
-bar-volume-width = 5
-bar-volume-foreground-0 = #55aa55
-bar-volume-foreground-1 = #55aa55
-bar-volume-foreground-2 = #55aa55
-bar-volume-foreground-3 = #55aa55
-bar-volume-foreground-4 = #55aa55
-bar-volume-foreground-5 = #f5a70a
-bar-volume-foreground-6 = #ff5555
-bar-volume-gradient = false
-bar-volume-indicator = │
-bar-volume-indicator-font = 2
-bar-volume-indicator-foreground = #ff
-bar-volume-fill = ─
-bar-volume-fill-font = 2
-bar-volume-empty = ─
-bar-volume-empty-font = 2
-bar-volume-empty-foreground = ${colors.foreground-alt}
+label-muted = ""
+format-muted-foreground = ${colours.foreground-disabled}
+label-muted-font = 3
 
 [module/battery]
 type = internal/battery
@@ -176,12 +196,24 @@ battery = BAT0
 adapter = AC0
 full-at = 98
 
+label-charging =  %percentage%%
 format-charging = <label-charging>
-format-charging-underline = #ffb52a
+format-charging-underline = ${colours.green}
+format-charging-margin = 1
 
-format-discharging = <label-discharging>
-format-discharging-underline = ${self.format-charging-underline}
+label-discharging =  %percentage%%
+format-discharging = <ramp-capacity> <label-discharging>
+format-discharging-underline = ${colours.orange}
+format-discharging-margin = 1
 
-format-full-prefix-foreground = ${colors.foreground-alt}
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
+
+label-full =  %percentage%%
+format-full-prefix-foreground = ${colors.foreground}
 format-full-underline = ${self.format-charging-underline}
+format-full-margin = 1
 
