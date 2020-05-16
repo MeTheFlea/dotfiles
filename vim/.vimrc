@@ -28,7 +28,7 @@ autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 " f1 for file explorer
 nnoremap <F1> :Ex<CR>
 "write as sudo
-cnoremap w!! w !sudo tee > /dev/null %
+cnoremap ww w suda://%
 " -------------------
 " fzf
 nnoremap <C-P> :Files<CR>
@@ -62,6 +62,7 @@ Plug 'tpope/vim-eunuch'
 Plug 'rust-lang/rust.vim'
 Plug 'dense-analysis/ale'
 Plug 'OmniSharp/omnisharp-vim'
+Plug 'lambdalisue/suda.vim'
 call plug#end()
 " -------------------
 "coloured theme stuff
