@@ -4,11 +4,12 @@
 
 # terminal emulator
 super + Return
-	urxvt
+	kitty
 
 # program launcher
 super + space
-	dmenu_run -b -i -fn "Hack"
+	rofi -show run
+#dmenu_run -b -i -fn "Hack"
 
 # make sxhkd reload its configuration files:
 super + Escape
