@@ -81,8 +81,8 @@ tray-background = ${colours.background}
 
 [bar/right]
 inherit = bar/common
-width = 15%
-offset-x = 80%
+width = 320
+offset-x = 95%:-320
 
 modules-left = battery volume backlight
 ;modules-left = volume backlight battery 
@@ -124,7 +124,7 @@ label-separator = |
 
 [module/xwindow]
 type = internal/xwindow
-label = %title:0:100:...%
+label = %title:0:50:...%
 label-font = 1
 
 [module/bspwm]
