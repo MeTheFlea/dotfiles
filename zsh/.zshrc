@@ -1,3 +1,5 @@
+_exists() { (( $+commands[$1] )) }
+
 HISTFILE=~/.zsh_history
 HISTSIZE=1000
 SAVEHIST=1000
@@ -8,8 +10,18 @@ unsetopt autocd extendedglob nomatch beep
 # emacs mode
 bindkey -e
 
-autoload -Uz compinit vcs_info
+autoload -Uz compinit vcs_info up-line-or-beginning-search down-line-or-beginning-search
 compinit
+
+# https://www.arp242.net/zshrc.html
+# filter history with what was typed
+zle -N up-line-or-beginning-search
+zle -N down-line-or-beginning-search
+
+bindkey '^[[A' up-line-or-beginning-search # arrow up
+bindkey '^[OA' up-line-or-beginning-search
+bindkey '^[[B' down-line-or-beginning-search # arrow down
+bindkey '^[OB' down-line-or-beginning-search
 
 # git prompt
 source ~/.zsh/.git-prompt.sh
@@ -23,7 +35,10 @@ zstyle ':vcs_info:git:*' formats '(%b)'
 alias ls="ls --color=auto"
 alias tmux="tmux -2"
 alias pclear='sudo pacman -Rsn $(pacman -Qdtq)'
-alias vim='nvim'
+
+if _exists nvim; then
+	alias vim='nvim'
+fi
 
 # start ssh-agent
 env=~/.ssh/agent.env
