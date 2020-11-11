@@ -60,7 +60,7 @@ Plug 'vimwiki/vimwiki'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'tpope/vim-eunuch'
 Plug 'rust-lang/rust.vim'
-Plug 'dense-analysis/ale'
+Plug 'MeTheFlea/ale'
 Plug 'OmniSharp/omnisharp-vim'
 Plug 'lambdalisue/suda.vim'
 call plug#end()
@@ -73,7 +73,17 @@ colorscheme base16-atelier-seaside
 let g:OmniSharp_server_stdio = 1
 " -------------------
 "ale
+" auto complete on cspace
 inoremap <silent> <C-Space> <C-\><C-O>:ALEComplete<CR>
+" auto complete on .
+inoremap <silent> <expr> . "." . "\<c-\>\<c-o>:ALEComplete\<CR>"
+
+" select menu item with tab
+inoremap <expr> <Tab> pumvisible() ? "\<C-y>" : "\<C-g>u\<Tab>"
+
+" dont auto insert selection
+set completeopt=menu,menuone,preview,noinsert
+
 autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
 set signcolumn=yes
 set splitbelow
