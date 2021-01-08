@@ -31,6 +31,13 @@ super + {_,shift + }q
 super + m
 	bspc desktop -l next
 
+XF86AudioMute
+	amixer -q set Master toggle
+XF86AudioRaiseVolume
+	amixer -q set Master 5%+ unmute
+XF86AudioLowerVolume
+	amixer -q set Master 5%- unmute
+
 # ----------------------
 # state/flags
 # ----------------------
