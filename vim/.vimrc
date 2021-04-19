@@ -22,6 +22,9 @@ set tags=./tags;/
 "disable defaulting to a commented line when pressing enter in a comment
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
+" enter insert mode when opening a terminal automatically
+autocmd TermOpen * startinsert
+
 " -------------------
 " ALIASES
 " -------------------
@@ -62,6 +65,7 @@ Plug 'rust-lang/rust.vim'
 Plug 'MeTheFlea/ale'
 Plug 'OmniSharp/omnisharp-vim'
 Plug 'lambdalisue/suda.vim'
+Plug 'octol/vim-cpp-enhanced-highlight'
 call plug#end()
 " -------------------
 "coloured theme stuff
@@ -93,10 +97,26 @@ let g:ale_lint_on_text_changed = 'never'
 let g:ale_linters = {
 	\ 'rust': ['rls'],
 	\ 'cs': ['OmniSharp'],
+	\ 'cpp': ['ccls'],
 \}
 nnoremap <silent> gd :ALEGoToDefinition<CR>
 nnoremap <silent> <F2> :ALERename<CR>
 nnoremap <silent> <C-Space> :ALEHover<CR>
+
+augroup remap_ale_completion
+  autocmd!
+  if v:vim_did_enter
+    "call RemapAleCompletion()
+  else
+    "au VimEnter * call RemapAleCompletion()
+  endif
+  "autocmd VimEnter * call RemapAleCompletion()
+augroup END
+
+function! RemapAleCompletion()
+  iunmap <Plug>(ale_show_completion_menu)
+  inoremap <silent> <Plug>(ale_show_completion_menu) <C-x><C-o>
+endfunction
 " -------------------
 "goyo
 let g:goyo_height = '90%'
@@ -111,12 +131,34 @@ let g:vimwiki_list = [{'path': '~/wiki/', 'syntax': 'markdown', 'ext': '.md'}]
 "lightline
 set noshowmode
 set laststatus=2
+
+let g:lightline = {
+    \ 'colorscheme' : 'default',
+    \ 'active' : {
+    \ 'left': [ [ 'mode', 'paste' ],
+    \           [ 'readonly', 'relativepath', 'modified' ] ],
+    \ 'right': [ [ 'lineinfo' ],
+    \            [ 'percent' ],
+    \            [ 'fileformat', 'fileencoding', 'filetype' ] ]
+    \ },
+    \ 'inactive' : {
+    \ 'left': [ [ 'relativepath' ] ],
+    \ 'right': [ [ 'lineinfo' ],
+    \            [ 'percent' ] ]
+    \ },
+    \ }
 " -------------------
 "rooter
 let g:rooter_silent_chdir = 1
 let g:rooter_patterns = [ '.git/', '.sln', '.lvimrc', 'Cargo.lock' ]
 let g:rooter_use_lcd = 1
 let g:rooter_check_all_patterns = 1
+" -------------------
+"cpp-enhanced-highlight
+let g:cpp_class_scope_highlight = 1
+let g:cpp_member_variable_highlight = 1
+let g:cpp_class_decl_highlight = 1
+let g:cpp_posix_standard = 1
 " -------------------
 
 function! SourceIfExists( filename )
