@@ -90,6 +90,7 @@ set completeopt=menu,menuone,preview,noinsert
 autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
 set signcolumn=yes
 set splitbelow
+let g:ale_completion_enabled = 1
 let g:ale_set_quickfix = 1
 let g:ale_set_loclist = 0
 let g:ale_open_list = 1
