@@ -22,8 +22,10 @@ set tags=./tags;/
 "disable defaulting to a commented line when pressing enter in a comment
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
-" enter insert mode when opening a terminal automatically
-autocmd TermOpen * startinsert
+if has('nvim')
+  " enter insert mode when opening a terminal automatically
+  autocmd TermOpen * startinsert
+endif
 
 " -------------------
 " ALIASES
