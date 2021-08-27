@@ -6,8 +6,14 @@
 [core]
 	editor = $EDITOR
 	autocrlf = input
+[difftool]
+	prompt = false
 [push]
 	default = simple
+[commit]
+	verbose = true
+[mergetool]
+	keepBackup = false
 [alias]
 	tree = log --graph --pretty=tformat:'%C(auto)%h%d %s %C(dim)<%an (%ar)>' --date=short
 	overview = !git tree --all -n$((`tput lines` - 15 ))
@@ -20,3 +26,4 @@
 	hidden = !git ls-files -v | grep -v "^H"
 	hide = update-index --skip-worktree -- 
 	unhide = update-index --no-skip-worktree -- 
+	morning = !git fetch --prune && git gc
