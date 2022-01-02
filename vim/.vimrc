@@ -61,7 +61,7 @@ Plug 'itchyny/lightline.vim'
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/vim-peekaboo'
 Plug 'sheerun/vim-polyglot'
-Plug 'vimwiki/vimwiki'
+Plug 'lervag/wiki.vim'
 Plug 'tpope/vim-eunuch'
 Plug 'rust-lang/rust.vim'
 Plug 'dense-analysis/ale'
@@ -123,8 +123,10 @@ let g:goyo_height = '90%'
 let g:localvimrc_sandbox = 0
 let g:localvimrc_ask = 0
 " -------------------
-"vimwiki
-let g:vimwiki_list = [{'path': '~/wiki/', 'syntax': 'markdown', 'ext': '.md'}]
+"wiki.vim
+let g:wiki_root = '~/wiki'
+let g:wiki_filetypes = ['md']
+let g:wiki_link_extension = '.md'
 " -------------------
 "lightline
 set noshowmode
