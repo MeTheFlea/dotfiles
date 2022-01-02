@@ -54,7 +54,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'MeTheFlea/base16-vim'
 Plug 'godlygeek/csapprox'
 Plug 'embear/vim-localvimrc'
-Plug 'MeTheFlea/vim-rooter'
+Plug 'airblade/vim-rooter'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'itchyny/lightline.vim'
@@ -65,7 +65,6 @@ Plug 'vimwiki/vimwiki'
 Plug 'tpope/vim-eunuch'
 Plug 'rust-lang/rust.vim'
 Plug 'dense-analysis/ale'
-Plug 'OmniSharp/omnisharp-vim'
 Plug 'lambdalisue/suda.vim'
 Plug 'octol/vim-cpp-enhanced-highlight'
 call plug#end()
@@ -73,9 +72,6 @@ call plug#end()
 "coloured theme stuff
 set t_Co=256
 colorscheme base16-atelier-seaside
-" -------------------
-"omnisharp
-let g:OmniSharp_server_stdio = 1
 " -------------------
 "ale
 " auto complete on cspace
@@ -99,7 +95,6 @@ let g:ale_open_list = 1
 let g:ale_lint_on_text_changed = 'never'
 let g:ale_linters = {
 	\ 'rust': ['rls'],
-	\ 'cs': ['OmniSharp'],
 	\ 'cpp': ['ccls'],
 \}
 nnoremap <silent> gd :ALEGoToDefinition<CR>
@@ -155,7 +150,6 @@ let g:lightline = {
 let g:rooter_silent_chdir = 1
 let g:rooter_patterns = [ '.git/', '.sln', '.lvimrc', 'Cargo.lock' ]
 let g:rooter_use_lcd = 1
-let g:rooter_check_all_patterns = 1
 " -------------------
 "cpp-enhanced-highlight
 let g:cpp_class_scope_highlight = 1
