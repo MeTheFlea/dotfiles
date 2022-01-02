@@ -38,7 +38,6 @@ cnoremap ww w suda://%
 " fzf
 nnoremap <C-P> :Files<CR>
 nnoremap <C-N> :Tags<CR>
-nnoremap <C-M> :BTags<CR>
 nnoremap <C-B> :Buffers<CR>
 nnoremap <Leader>p :silent !ctags -R .<CR>
 " -------------------
@@ -127,6 +126,7 @@ let g:localvimrc_ask = 0
 let g:wiki_root = '~/wiki'
 let g:wiki_filetypes = ['md']
 let g:wiki_link_extension = '.md'
+let g:wiki_link_target_type = 'md'
 " -------------------
 "lightline
 set noshowmode
@@ -151,7 +151,7 @@ let g:lightline = {
 "rooter
 let g:rooter_silent_chdir = 1
 let g:rooter_patterns = [ '.git/', '.sln', '.lvimrc', 'Cargo.lock' ]
-let g:rooter_use_lcd = 1
+let g:rooter_cd_cmd = "lcd"
 " -------------------
 "cpp-enhanced-highlight
 let g:cpp_class_scope_highlight = 1
