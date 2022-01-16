@@ -63,7 +63,7 @@ Plug 'sheerun/vim-polyglot'
 Plug 'lervag/wiki.vim'
 Plug 'tpope/vim-eunuch'
 Plug 'rust-lang/rust.vim'
-Plug 'dense-analysis/ale'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'lambdalisue/suda.vim'
 Plug 'octol/vim-cpp-enhanced-highlight'
 call plug#end()
@@ -72,51 +72,11 @@ call plug#end()
 set t_Co=256
 colorscheme base16-atelier-seaside
 " -------------------
-"ale
-" auto complete on cspace
-inoremap <silent> <C-Space> <C-\><C-O>:ALEComplete<CR>
-" auto complete on .
-inoremap <silent> <expr> . "." . "\<c-\>\<c-o>:ALEComplete\<CR>"
-
-" select menu item with tab
-inoremap <expr> <Tab> pumvisible() ? "\<C-y>" : "\<C-g>u\<Tab>"
-
-" dont auto insert selection
-set completeopt=menu,menuone,preview,noinsert
-
-autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
-set signcolumn=yes
-set splitbelow
-let g:ale_completion_enabled = 1
-let g:ale_set_quickfix = 1
-let g:ale_set_loclist = 0
-let g:ale_open_list = 1
-let g:ale_lint_on_text_changed = 'never'
-let g:ale_linters = {
-	\ 'rust': ['rls'],
-	\ 'cpp': ['ccls'],
-\}
-nnoremap <silent> gd :ALEGoToDefinition<CR>
-nnoremap <silent> <F2> :ALERename<CR>
-nnoremap <silent> <C-Space> :ALEHover<CR>
-
-augroup remap_ale_completion
-  autocmd!
-  if v:vim_did_enter
-    "call RemapAleCompletion()
-  else
-    "au VimEnter * call RemapAleCompletion()
-  endif
-  "autocmd VimEnter * call RemapAleCompletion()
-augroup END
-
-function! RemapAleCompletion()
-  iunmap <Plug>(ale_show_completion_menu)
-  inoremap <silent> <Plug>(ale_show_completion_menu) <C-x><C-o>
-endfunction
-" -------------------
 "goyo
 let g:goyo_height = '90%'
+" -------------------
+"coc
+let g:coc_config_home = '~/.vim/'
 " -------------------
 "lvimrc
 let g:localvimrc_sandbox = 0
