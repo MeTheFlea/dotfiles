@@ -1,11 +1,7 @@
-if has("win32")
-	if exists( 'g:GuiLoaded' ) "checks for nvim-qt
-		GuiFont! Hack:h10
-	else
-		set guifont=Hack:h10
-	endif
+if exists(':GuiFont')
+	GuiFont Hack:h10
 else
-	set guifont=Hack\ 10
+	set guifont=Hack:h10
 endif
 set guioptions-=m
 set guioptions-=T
