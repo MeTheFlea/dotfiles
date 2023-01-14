@@ -95,6 +95,9 @@ autocmd CursorHold * silent call CocActionAsync('highlight')
 " Symbol renaming. (alt shift R)
 nmap <A-S-R> <Plug>(coc-rename)
 
+" CoCAction with alt+enter
+nmap <A-CR> <Plug>(coc-codeaction-cursor)
+
 " Use C-Space to show documentation in preview window.
 nnoremap <silent> <C-Space> :call <SID>show_documentation()<CR>
 
