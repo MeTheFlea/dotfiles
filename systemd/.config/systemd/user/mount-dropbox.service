@@ -1,8 +1,0 @@
-[Unit]
-Description=Mount dropbox folder
-
-[Service]
-ExecStart=rclone mount dropbox-cache: /home/martin/dropbox --vfs-cache-mode writes
-
-[Install]
-WantedBy=default.target

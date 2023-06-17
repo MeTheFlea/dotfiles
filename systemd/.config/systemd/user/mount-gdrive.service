@@ -1,8 +1,0 @@
-[Unit]
-Description=Mount google drive folder
-
-[Service]
-ExecStart=rclone mount gdrive-cache: /home/martin/gdrive --vfs-cache-mode writes
-
-[Install]
-WantedBy=default.target

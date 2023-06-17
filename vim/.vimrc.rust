@@ -1,5 +1,0 @@
-nnoremap <F5> :!cargo run<CR>
-nnoremap <C-F5> :!cargo run --release<CR>
-nnoremap <F7> :!cargo build<CR>
-nnoremap <C-F7> :!cargo build --release<CR>
-nnoremap <Leader>f :RustFmt<CR>
