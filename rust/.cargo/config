@@ -1,5 +1,0 @@
-[cargo-new]
-vcs = "none"
-
-[net]
-git-fetch-with-cli = true

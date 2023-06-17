@@ -1,9 +1,0 @@
-- defaults:
-    link:
-      relink: true
-      force: true
-
-- clean: ['~']
-
-- link:
-    ~/.cargo: ../rust/.cargo
