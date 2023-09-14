@@ -15,7 +15,7 @@
 [mergetool]
 	keepBackup = false
 [alias]
-	tree = log --graph --pretty=tformat:'%C(auto)%h%d %s %C(dim)<%an (%ar)>' --date=short
+	tree = log --graph --pretty=tformat:'%C(auto)%h%d %s %C(dim)<%aN (%ar)>' --date=short
 	overview = !git tree --all -n$((`tput lines` - 15 ))
 	ov = !git tree -n$((`tput lines` - 15 ))
 	diffshow = "!f() { COMMIT="$1"; shift; git difftool "$COMMIT^" "$COMMIT" "$@"; }; f"
