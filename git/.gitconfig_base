@@ -3,17 +3,6 @@
 # [include]
 # path = .gitconfig_base
 # --------------------------------------------------
-[core]
-	editor = $EDITOR
-	autocrlf = input
-[difftool]
-	prompt = false
-[push]
-	default = simple
-[commit]
-	verbose = true
-[mergetool]
-	keepBackup = false
 [alias]
 	tree = log --graph --pretty=tformat:'%C(auto)%h%d %s %C(dim)<%aN (%ar)>' --date=short
 	overview = !git tree --all -n$((`tput lines` - 15 ))
@@ -27,3 +16,24 @@
 	hide = update-index --skip-worktree -- 
 	unhide = update-index --no-skip-worktree -- 
 	morning = !git fetch --prune && git gc
+[core]
+	editor = $EDITOR
+	autocrlf = input
+[diff]
+	algorithm = histogram
+	noprefix = true
+	renames = copies
+[difftool]
+	prompt = false
+[push]
+	default = simple
+[pull]
+	ff = only
+[commit]
+	verbose = true
+[merge]
+	conflictstyle = zdiff3
+[mergetool]
+	keepBackup = false
+[rebase]
+	autosquash = true
