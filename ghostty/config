@@ -1,0 +1,10 @@
+# disable ligatures
+font-feature = -calt
+font-feature = -liga
+font-feature = -dlig
+
+# fonts
+font-family = "Departure Mono"
+font-size = 11
+
+confirm-close-surface = false
