@@ -1,2 +1,4 @@
+[aliases]
+ov = [ "log", "-r", "all()", "--no-pager", "-n10" ] 
 [ui]
 default-command = [ "log", "-n10", "--no-pager" ]
