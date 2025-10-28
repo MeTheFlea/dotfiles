@@ -1,0 +1,40 @@
+{
+    "createdBy": "Redirector v3.5.3",
+    "createdAt": "2025-11-18T19:45:58.810Z",
+    "redirects": [
+        {
+            "description": "Twitter",
+            "exampleUrl": "https://x.com/Jerma985",
+            "exampleResult": "https://nitter.net/Jerma985",
+            "error": null,
+            "includePattern": "https?://(?:x|twitter)\\.com(?:/(.*))?",
+            "excludePattern": "",
+            "patternDesc": "",
+            "redirectUrl": "https://nitter.net/$1",
+            "patternType": "R",
+            "processMatches": "noProcessing",
+            "disabled": false,
+            "grouped": false,
+            "appliesTo": [
+                "main_frame"
+            ]
+        },
+        {
+            "description": "Reddit",
+            "exampleUrl": "https://www.reddit.com/r/Jerma985",
+            "exampleResult": "https://old.reddit.com/r/Jerma985",
+            "error": null,
+            "includePattern": "https?://(?:www\\.)reddit\\.com(?:/(.*))?",
+            "excludePattern": "",
+            "patternDesc": "",
+            "redirectUrl": "https://old.reddit.com/$1",
+            "patternType": "R",
+            "processMatches": "noProcessing",
+            "disabled": false,
+            "grouped": false,
+            "appliesTo": [
+                "main_frame"
+            ]
+        }
+    ]
+}
