@@ -1,0 +1,12 @@
+[Default Applications]
+image/bmp=qimgv.desktop
+image/gif=qimgv.desktop
+image/jpeg=qimgv.desktop
+image/png=qimgv.desktop
+image/svg+xml=qimgv.desktop
+image/tiff=qimgv.desktop
+image/webp=qimgv.desktop
+image/heif=qimgv.desktop
+image/heic=qimgv.desktop
+image/jpg=qimgv.desktop
+image/x-icon=qimgv.desktop

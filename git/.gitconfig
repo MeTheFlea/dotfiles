@@ -1,8 +1,3 @@
-# --------------------------------------------------
-# include this into the real .gitconfig like this:
-# [include]
-# path = .gitconfig_base
-# --------------------------------------------------
 [alias]
 	tree = log --graph --pretty=tformat:'%C(auto)%h%d %s %C(dim)<%aN (%ar)>' --date=short
 	overview = !git tree --all -n$((`tput lines` - 15 ))
