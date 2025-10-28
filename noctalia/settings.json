@@ -47,6 +47,15 @@
                     "labelMode": "none"
                 },
                 {
+                    "id": "SystemMonitor",
+                    "showCpuTemp": false,
+                    "showCpuUsage": true,
+                    "showDiskUsage": false,
+                    "showMemoryAsPercent": true,
+                    "showMemoryUsage": true,
+                    "showNetworkStats": false
+                },
+                {
                     "hideMode": "hidden",
                     "id": "MediaMini",
                     "maxWidth": 500,
@@ -76,15 +85,6 @@
                     "displayMode": "alwaysShow",
                     "id": "Battery",
                     "warningThreshold": 20
-                },
-                {
-                    "id": "SystemMonitor",
-                    "showCpuTemp": false,
-                    "showCpuUsage": true,
-                    "showDiskUsage": false,
-                    "showMemoryAsPercent": true,
-                    "showMemoryUsage": false,
-                    "showNetworkStats": false
                 },
                 {
                     "customFont": "",
