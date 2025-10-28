@@ -10,3 +10,5 @@ image/heif=qimgv.desktop
 image/heic=qimgv.desktop
 image/jpg=qimgv.desktop
 image/x-icon=qimgv.desktop
+x-scheme-handler/sgnl=signal.desktop
+x-scheme-handler/signalcaptcha=signal.desktop
