@@ -125,7 +125,7 @@ layout {
         // off
         width 4
         active-color "#32a852"
-        inactive-color "#505050"
+        inactive-color "#574E47"
         // Color of the border around windows that request your attention.
         urgent-color "#9b0000"
  // active-gradient from="#e5989b" to="#ffb4a2" angle=45 relative-to="workspace-view" in="oklch longer hue"
