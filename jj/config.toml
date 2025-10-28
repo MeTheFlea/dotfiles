@@ -14,3 +14,6 @@ ll = [ "log", "-r", "all()" ]
 
 [ui]
 default-command = [ "log", "-n10", "--no-pager" ]
+
+[git]
+colocate = false
