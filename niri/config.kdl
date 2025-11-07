@@ -5,6 +5,12 @@
 // Input device configuration.
 // Find the full list of options on the wiki:
 // https://yalter.github.io/niri/Configuration:-Input
+spawn-at-startup "noctalia-shell"
+spawn-sh-at-startup "steam -silent"
+spawn-at-startup "thunderbird"
+spawn-at-startup "discord --start-minimized"
+spawn-sh-at-startup "sleep 10 && qsyncthingtray"
+
 input {
     keyboard {
         xkb {
@@ -150,10 +156,6 @@ layout {
         // bottom 64
     }
 }
-spawn-at-startup "noctalia-shell"
-spawn-sh-at-startup "steam -silent"
-spawn-at-startup "thunderbird"
-spawn-sh-at-startup "sleep 10 && qsyncthingtray"
 hotkey-overlay {
     skip-at-startup
 }
