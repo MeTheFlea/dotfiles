@@ -1,6 +1,8 @@
 {
     "appLauncher": {
         "backgroundOpacity": 1,
+        "customLaunchPrefix": "",
+        "customLaunchPrefixEnabled": false,
         "enableClipboardHistory": false,
         "pinnedExecs": [
         ],
@@ -42,6 +44,7 @@
             ],
             "left": [
                 {
+                    "characterCount": 2,
                     "hideUnoccupied": false,
                     "id": "Workspace",
                     "labelMode": "none"
@@ -107,7 +110,8 @@
         "chargingMode": 0
     },
     "brightness": {
-        "brightnessStep": 5
+        "brightnessStep": 5,
+        "enforceMinimum": true
     },
     "colorSchemes": {
         "darkMode": true,
@@ -203,7 +207,8 @@
         "wallpaperChange": ""
     },
     "location": {
-        "name": "Breda",
+        "analogClockInCalendar": true,
+        "name": "",
         "showCalendarEvents": true,
         "showWeekNumberInCalendar": false,
         "use12hourFormat": false,
@@ -223,6 +228,7 @@
         "nightTemp": "4000"
     },
     "notifications": {
+        "backgroundOpacity": 1,
         "criticalUrgencyDuration": 15,
         "doNotDisturb": false,
         "location": "top_right",
@@ -271,7 +277,8 @@
         "kitty": false,
         "pywalfox": false,
         "qt": false,
-        "vicinae": false
+        "vicinae": false,
+        "walker": false
     },
     "ui": {
         "fontDefault": "Roboto",
@@ -297,6 +304,7 @@
         ],
         "randomEnabled": true,
         "randomIntervalSec": 300,
+        "recursiveSearch": false,
         "setWallpaperOnAllMonitors": true,
         "transitionDuration": 1500,
         "transitionEdgeSmoothness": 0.05,
