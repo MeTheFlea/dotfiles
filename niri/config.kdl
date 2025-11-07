@@ -183,6 +183,13 @@ window-rule {
     }
 }
 window-rule {
+    match app-id="thunderbird$"
+    open-maximized true
+    default-column-width {
+        proportion 0.5
+    }
+}
+window-rule {
     match app-id="librewolf$" title="^Picture-in-Picture$"
     open-floating true
 }
