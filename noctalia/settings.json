@@ -8,7 +8,7 @@
         ],
         "position": "center",
         "sortByMostUsed": true,
-        "terminalCommand": "xterm -e",
+        "terminalCommand": "ghostty +new-window",
         "useApp2Unit": false
     },
     "audio": {
@@ -16,6 +16,7 @@
         "mprisBlacklist": [
         ],
         "preferredPlayer": "",
+        "visualizerQuality": "high",
         "visualizerType": "linear",
         "volumeOverdrive": false,
         "volumeStep": 5
@@ -23,11 +24,13 @@
     "bar": {
         "backgroundOpacity": 0,
         "density": "default",
+        "exclusive": true,
         "floating": true,
         "marginHorizontal": 0.25,
         "marginVertical": 0.25,
         "monitors": [
         ],
+        "outerCorners": true,
         "position": "top",
         "showCapsule": true,
         "widgets": {
@@ -56,10 +59,12 @@
                     "showDiskUsage": false,
                     "showMemoryAsPercent": true,
                     "showMemoryUsage": true,
-                    "showNetworkStats": false
+                    "showNetworkStats": false,
+                    "usePrimaryColor": false
                 },
                 {
                     "hideMode": "hidden",
+                    "hideWhenIdle": false,
                     "id": "MediaMini",
                     "maxWidth": 500,
                     "scrollingMode": "hover",
@@ -74,6 +79,9 @@
                     "blacklist": [
                     ],
                     "colorizeIcons": false,
+                    "drawerEnabled": false,
+                    "favorites": [
+                    ],
                     "id": "Tray"
                 },
                 {
@@ -98,6 +106,7 @@
                     "usePrimaryColor": true
                 },
                 {
+                    "colorizeDistroLogo": false,
                     "customIconPath": "",
                     "icon": "settings",
                     "id": "ControlCenter",
@@ -111,6 +120,7 @@
     },
     "brightness": {
         "brightnessStep": 5,
+        "enableDdcSupport": false,
         "enforceMinimum": true
     },
     "colorSchemes": {
@@ -179,6 +189,7 @@
         "backgroundOpacity": 1,
         "colorizeIcons": false,
         "displayMode": "always_visible",
+        "enabled": false,
         "floatingRatio": 1,
         "monitors": [
         ],
@@ -193,12 +204,16 @@
         "avatarImage": "/home/martin/Sync/Misc/RedDino.png",
         "compactLockScreen": false,
         "dimDesktop": false,
+        "enableShadows": true,
         "forceBlackScreenCorners": false,
         "language": "",
         "lockOnSuspend": true,
         "radiusRatio": 1,
         "scaleRatio": 1,
         "screenRadiusRatio": 1,
+        "shadowDirection": "bottom_right",
+        "shadowOffsetX": 2,
+        "shadowOffsetY": 3,
         "showScreenCorners": false
     },
     "hooks": {
@@ -209,7 +224,9 @@
     "location": {
         "analogClockInCalendar": true,
         "name": "",
+        "firstDayOfWeek": -1,
         "showCalendarEvents": true,
+        "showCalendarWeather": true,
         "showWeekNumberInCalendar": false,
         "use12hourFormat": false,
         "useFahrenheit": false,
@@ -230,7 +247,7 @@
     "notifications": {
         "backgroundOpacity": 1,
         "criticalUrgencyDuration": 15,
-        "doNotDisturb": false,
+        "enabled": true,
         "location": "top_right",
         "lowUrgencyDuration": 3,
         "monitors": [
@@ -258,9 +275,11 @@
         "videoCodec": "h264",
         "videoSource": "portal"
     },
-    "settingsVersion": 16,
+    "settingsVersion": 21,
     "setupCompleted": true,
     "templates": {
+        "alacritty": false,
+        "code": false,
         "discord": false,
         "discord_armcord": false,
         "discord_dorion": false,
@@ -277,15 +296,18 @@
         "kitty": false,
         "pywalfox": false,
         "qt": false,
+        "spicetify": false,
         "vicinae": false,
-        "walker": false
+        "walker": false,
+        "wezterm": false
     },
     "ui": {
         "fontDefault": "Roboto",
         "fontDefaultScale": 1,
         "fontFixed": "DejaVu Sans Mono",
         "fontFixedScale": 1,
-        "panelsOverlayLayer": true,
+        "panelsAttachedToBar": true,
+        "settingsPanelAttachToBar": false,
         "tooltipsEnabled": true
     },
     "wallpaper": {
@@ -295,13 +317,9 @@
         "enabled": true,
         "fillColor": "#000000",
         "fillMode": "crop",
-        "monitors": [
-            {
-                "directory": "/home/martin/Pictures/Wallpapers",
-                "name": "eDP-1",
-                "wallpaper": "/home/martin/Sync/Wallpapers/wallpaper-722413.jpg"
-            }
-        ],
+        "monitors": [],
+        "overviewEnabled": true,
+        "panelPosition": "follow_bar",
         "randomEnabled": true,
         "randomIntervalSec": 300,
         "recursiveSearch": false,
