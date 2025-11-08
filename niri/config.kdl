@@ -12,7 +12,6 @@ spawn-at-startup "steam"
 spawn-sh-at-startup "discord"
 spawn-sh-at-startup "sleep 10 && qsyncthingtray"
 spawn-sh-at-startup "vicinae server"
-
 window-rule {
     match at-startup=true app-id="thunderbird$"
     open-on-workspace "chat"
@@ -29,14 +28,12 @@ window-rule {
     match at-startup=true app-id="librewolf"
     open-on-workspace "main"
 }
-
 workspace "main"
 workspace "chat"
-
 input {
     keyboard {
         xkb {
- // You can set rules, model, layout, variant and options.
+            // You can set rules, model, layout, variant and options.
             // For more information, see xkeyboard-config(7).
 
             // For example:
@@ -48,7 +45,7 @@ input {
             // localectl set-x11-keymap.
 
         }
- // Enable numlock on startup, omitting this setting disables it.
+        // Enable numlock on startup, omitting this setting disables it.
         // numlock
     }
     // Next sections include libinput settings.
@@ -140,6 +137,7 @@ layout {
     // default-column-width { proportion 0.5; }
     // If you leave the brackets empty, the windows themselves will decide their initial width.
     default-column-width {
+
     }
     focus-ring {
         off
@@ -253,12 +251,10 @@ window-rule {
     geometry-corner-radius 12
     clip-to-geometry true
 }
-
 debug {
-  // Allows notification actions and window activation from Noctalia.
-  honor-xdg-activation-with-invalid-serial
+    // Allows notification actions and window activation from Noctalia.
+    honor-xdg-activation-with-invalid-serial
 }
-
 gestures {
     hot-corners {
         off
@@ -565,7 +561,6 @@ binds {
     // Mod+Shift+Ctrl+F {
     //     maximize-window-to-edges
     // }
-
     // Expand the focused column to space not taken up by other fully visible columns.
     // Makes the column "fill the rest of the space".
     Mod+Ctrl+F {
