@@ -11,6 +11,7 @@ spawn-at-startup "thunderbird"
 spawn-at-startup "steam"
 spawn-sh-at-startup "discord"
 spawn-sh-at-startup "sleep 10 && qsyncthingtray"
+spawn-sh-at-startup "vicinae server"
 
 window-rule {
     match at-startup=true app-id="thunderbird$"
@@ -279,7 +280,8 @@ binds {
         spawn "noctalia-shell" "ipc" "call" "lockScreen" "lock"
     }
     Mod+Space repeat=false {
-        spawn "noctalia-shell" "ipc" "call" "launcher" "toggle"
+        // spawn "noctalia-shell" "ipc" "call" "launcher" "toggle"
+        spawn "vicinae" "toggle"
     }
     Mod+E repeat=false {
         spawn "pcmanfm"
