@@ -11,6 +11,18 @@ spawn-at-startup "thunderbird"
 spawn-sh-at-startup "discord --start-minimized"
 spawn-sh-at-startup "sleep 10 && qsyncthingtray"
 
+window-rule {
+    match at-startup=true app-id="thunderbird$"
+    open-on-workspace "chat"
+}
+window-rule {
+    match at-startup=true app-id="steam"
+    open-on-workspace "chat"
+}
+
+workspace "main"
+workspace "chat"
+
 input {
     keyboard {
         xkb {
