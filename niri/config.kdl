@@ -565,10 +565,14 @@ binds {
     Mod+G {
         toggle-windowed-fullscreen
     }
-    // TODO: after niri update
-    // Mod+Shift+Ctrl+F {
-    //     maximize-window-to-edges
-    // }
+
+    Mod+Shift+B {
+        spawn "noctalia-shell" "ipc" "call" "bar" "toggle"
+    }
+    Mod+B {
+        maximize-window-to-edges
+    }
+
     // Expand the focused column to space not taken up by other fully visible columns.
     // Makes the column "fill the rest of the space".
     Mod+Ctrl+F {
