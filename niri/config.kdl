@@ -10,6 +10,12 @@ spawn-at-startup "thunderbird"
 spawn-at-startup "steam"
 spawn-sh-at-startup "discord"
 spawn-sh-at-startup "sleep 10 && qsyncthingtray"
+
+window-rule {
+    geometry-corner-radius 12
+    clip-to-geometry true
+}
+
 window-rule {
     match at-startup=true app-id="thunderbird$"
     open-on-workspace "chat"
@@ -250,10 +256,6 @@ window-rule {
  // Use this instead if you want them visible on third-party screenshot tools.
     // block-out-from "screencast"
 }
-window-rule {
-    geometry-corner-radius 12
-    clip-to-geometry true
-}
 debug {
     // Allows notification actions and window activation from Noctalia.
     honor-xdg-activation-with-invalid-serial
@@ -267,6 +269,14 @@ gestures {
 layer-rule {
     match namespace="^noctalia-overview"
     place-within-backdrop true
+}
+
+// bar has blur otherwise
+layer-rule {
+    match namespace="^noctalia-background"
+    background-effect {
+      blur false
+    }
 }
 cursor {
     xcursor-theme "XCursor-Pro-Dark"
