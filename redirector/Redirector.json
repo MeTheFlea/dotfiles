@@ -1,6 +1,6 @@
 {
     "createdBy": "Redirector v3.5.3",
-    "createdAt": "2025-11-18T19:45:58.810Z",
+    "createdAt": "2025-12-28T16:44:55.826Z",
     "redirects": [
         {
             "description": "Twitter",
@@ -24,10 +24,10 @@
             "exampleUrl": "https://www.reddit.com/r/Jerma985",
             "exampleResult": "https://old.reddit.com/r/Jerma985",
             "error": null,
-            "includePattern": "https?://(?:www\\.)reddit\\.com(?:/(.*))?",
+            "includePattern": "https?://(?:www\\.)?reddit\\.com(?!/media)(:?/(.*))?",
             "excludePattern": "",
             "patternDesc": "",
-            "redirectUrl": "https://old.reddit.com/$1",
+            "redirectUrl": "https://old.reddit.com/$2",
             "patternType": "R",
             "processMatches": "noProcessing",
             "disabled": false,
