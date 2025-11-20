@@ -33,6 +33,7 @@ window-rule {
 }
 workspace "main"
 workspace "chat"
+
 input {
     keyboard {
         xkb {
