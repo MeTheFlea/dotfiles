@@ -6,7 +6,6 @@
 // Find the full list of options on the wiki:
 // https://yalter.github.io/niri/Configuration:-Input
 spawn-at-startup "noctalia-shell"
-spawn-at-startup "librewolf"
 spawn-at-startup "thunderbird"
 spawn-at-startup "steam"
 spawn-sh-at-startup "discord"
@@ -26,10 +25,6 @@ window-rule {
     match at-startup=true app-id="discord"
     open-on-workspace "chat"
     open-focused false
-}
-window-rule {
-    match at-startup=true app-id="librewolf"
-    open-on-workspace "main"
 }
 window-rule {
     match app-id="^FFPWA-"
