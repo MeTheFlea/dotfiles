@@ -1,0 +1,83 @@
+[audio]
+enable_overdrive = true
+
+[bar.default]
+background_opacity = 0.5
+capsule = true
+center = [ "active_window" ]
+end = [ "tray", "notifications", "group:g1", "group:g2", "clock", "session" ]
+margin_ends = "2%"
+radius_top_left = 0
+radius_top_right = 0
+start = [ "workspaces", "media" ]
+
+    [[bar.default.capsule_group]]
+    accordion = false
+    accordion_direction = "end"
+    border_width = 1.0
+    enabled = true
+    fill = "surface_container"
+    id = "g1"
+    members = [ "bluetooth", "network" ]
+    opacity = 1.0
+    padding = 6.0
+
+    [[bar.default.capsule_group]]
+    accordion = false
+    accordion_direction = "end"
+    border_width = 1.0
+    enabled = true
+    fill = "surface_container"
+    id = "g2"
+    members = [ "volume", "brightness", "battery" ]
+    opacity = 1.0
+    padding = 6.0
+
+[desktop_widgets]
+enabled = false
+
+[lockscreen]
+transition = [ "crt", "pixel" ]
+transition_duration = 500
+
+[lockscreen_widgets]
+enabled = false
+
+[shell.launcher]
+categories = false
+layout = "simple"
+
+[theme]
+source = "wallpaper"
+wallpaper_scheme = "m3-fruit-salad"
+
+[wallpaper]
+directory = "/home/martin/Sync/Wallpapers"
+transition_on_startup = true
+
+    [wallpaper.automation]
+    enabled = true
+    interval_seconds = 600
+    recursive = true
+
+[widget.active_window]
+max_length = 800
+
+[widget.brightness]
+peek = true
+
+[widget.clock]
+tooltip_format = "{:%A, %d-%m-%Y}"
+
+[widget.media]
+hide_when_no_media = true
+show_progress = true
+title_scroll = "on_hover"
+
+[widget.network]
+peek = true
+show_vpn_label = true
+vpn_status = "both"
+
+[widget.workspaces]
+show_labels = false
