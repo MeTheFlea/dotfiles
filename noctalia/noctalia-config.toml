@@ -138,6 +138,7 @@ vpn_status = "both"
 
 [widget.workspaces]
 show_labels = false
+show_tooltip = false
 
 [widget.cpu]
 show_cpu_cores = true
@@ -160,3 +161,4 @@ show_value = false
 [widget.sysmon]
 show_cpu_cores = true
 stat = "disk_free"
+
