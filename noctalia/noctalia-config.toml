@@ -1,6 +1,9 @@
 [audio]
 enable_overdrive = true
 
+[battery]
+warning_threshold = 20
+
 [backdrop]
 blur_intensity = 0.2
 enabled = true
@@ -69,6 +72,20 @@ enabled = false
 [shell.panel]
 control_center_placement = "floating"
 control_center_position = "top_center"
+session_placement = "floating"
+session_position = "top_right"
+
+    [[shell.session.actions]]
+    action = "lock"
+    enabled = true
+
+    [[shell.session.actions]]
+    action = "reboot"
+    enabled = true
+
+    [[shell.session.actions]]
+    action = "shutdown"
+    enabled = true
 
 [shell.launcher]
 categories = false
