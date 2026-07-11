@@ -7,7 +7,11 @@ enabled = true
 tint_intensity = 0.0
 
 [bar.default]
-background_opacity = 0.5
+background_opacity = 0.0
+capsule_opacity = 0.5
+capsule_radius = 7
+capsule_thickness = 0.75
+compositor_blur = false
 capsule = true
 center = [ "active_window" ]
 end = [ "tray", "notifications", "group:g1", "group:g2", "clock", "session" ]
@@ -24,7 +28,7 @@ start = [ "workspaces", "media", "group:g3" ]
     fill = "surface_container"
     id = "g1"
     members = [ "bluetooth", "network" ]
-    opacity = 1.0
+    opacity = 0.5
     padding = 6.0
 
     [[bar.default.capsule_group]]
@@ -35,7 +39,7 @@ start = [ "workspaces", "media", "group:g3" ]
     fill = "surface_container"
     id = "g2"
     members = [ "volume", "brightness", "battery" ]
-    opacity = 1.0
+    opacity = 0.5
     padding = 6.0
 
     [[bar.default.capsule_group]]
@@ -46,7 +50,7 @@ start = [ "workspaces", "media", "group:g3" ]
     fill = "surface_container"
     id = "g3"
     members = [ "mon_cputemp", "cpu", "ram", "mon_disk" ]
-    opacity = 1.0
+    opacity = 0.5
     padding = 6.0
 
 [control_center.calendar]
@@ -61,6 +65,10 @@ transition_duration = 500
 
 [lockscreen_widgets]
 enabled = false
+
+[shell.panel]
+control_center_placement = "floating"
+control_center_position = "top_center"
 
 [shell.launcher]
 categories = false
