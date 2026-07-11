@@ -14,7 +14,7 @@ end = [ "tray", "notifications", "group:g1", "group:g2", "clock", "session" ]
 margin_ends = "2%"
 radius_top_left = 0
 radius_top_right = 0
-start = [ "workspaces", "media" ]
+start = [ "workspaces", "media", "group:g3" ]
 
     [[bar.default.capsule_group]]
     accordion = false
@@ -37,6 +37,20 @@ start = [ "workspaces", "media" ]
     members = [ "volume", "brightness", "battery" ]
     opacity = 1.0
     padding = 6.0
+
+    [[bar.default.capsule_group]]
+    accordion = false
+    accordion_direction = "end"
+    border_width = 1.0
+    enabled = true
+    fill = "surface_container"
+    id = "g3"
+    members = [ "mon_cputemp", "cpu", "ram", "mon_disk" ]
+    opacity = 1.0
+    padding = 6.0
+
+[control_center.calendar]
+show_events_card = false
 
 [desktop_widgets]
 enabled = false
@@ -86,3 +100,25 @@ vpn_status = "both"
 
 [widget.workspaces]
 show_labels = false
+
+[widget.cpu]
+show_cpu_cores = true
+show_value = false
+
+[widget.mon_cputemp]
+label_show_units = false
+show_value = false
+stat = "cpu_temp"
+type = "sysmon"
+
+[widget.mon_disk]
+show_value = false
+stat = "disk_free"
+type = "sysmon"
+
+[widget.ram]
+show_value = false
+
+[widget.sysmon]
+show_cpu_cores = true
+stat = "disk_free"
