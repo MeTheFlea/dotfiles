@@ -79,6 +79,9 @@ pinned = [ "librewolf" ]
 source = "wallpaper"
 wallpaper_scheme = "m3-fruit-salad"
 
+[theme.templates]
+enable_builtin_templates = false
+
 # copied files from:
 # https://github.com/noctalia-dev/noctalia/blob/main/assets/templates/niri/
 [theme.templates.user.custom_niri]
