@@ -32,7 +32,7 @@ window-rule {
     open-focused false
 }
 window-rule {
-    match app-id="^FFPWA-"
+    match app-id="^librewolf.webapp-"
     // does not exist
     // open-windowed-fullscreen true
 }
@@ -674,3 +674,5 @@ switch-events {
         spawn "noctalia" "msg" "session" "lock-and-suspend"
     }
 }
+
+include optional=true "noctalia.kdl"

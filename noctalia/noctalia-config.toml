@@ -79,6 +79,14 @@ pinned = [ "librewolf" ]
 source = "wallpaper"
 wallpaper_scheme = "m3-fruit-salad"
 
+# copied files from:
+# https://github.com/noctalia-dev/noctalia/blob/main/assets/templates/niri/
+[theme.templates.user.custom_niri]
+input_path = "./niri/niri.kdl"
+output_path_dynamic = "bash '{{ config_dir }}/niri/apply.sh' output"
+post_hook = "bash '{{ config_dir }}/niri/apply.sh' apply"
+undo_hook = "bash '{{ config_dir }}/niri/undo.sh'"
+
 [wallpaper]
 directory = "/home/martin/Sync/Wallpapers"
 transition_on_startup = true
