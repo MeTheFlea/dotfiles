@@ -100,6 +100,7 @@ transition_on_startup = true
     recursive = true
 
 [widget.active_window]
+min_length = 0
 max_length = 800
 
 [widget.brightness]
