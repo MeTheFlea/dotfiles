@@ -2,4 +2,3 @@
 # VERSION: 3.0
 SETUVAR __fish_initialized:4300
 SETUVAR fish_greeting:\x1d
-SETUVAR fish_user_paths:/nix/store/1jn2jiqmnn11ns97r0jx6x19yblr5dc6\x2dghostty\x2d1\x2e2\x2e2/bin
