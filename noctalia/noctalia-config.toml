@@ -1,6 +1,11 @@
 [audio]
 enable_overdrive = true
 
+[backdrop]
+blur_intensity = 0.2
+enabled = true
+tint_intensity = 0.0
+
 [bar.default]
 background_opacity = 0.5
 capsule = true
