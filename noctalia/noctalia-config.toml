@@ -65,6 +65,7 @@ enabled = false
 [shell.launcher]
 categories = false
 layout = "simple"
+pinned = [ "librewolf" ]
 
 [theme]
 source = "wallpaper"
