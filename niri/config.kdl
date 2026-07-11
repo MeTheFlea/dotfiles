@@ -286,7 +286,7 @@ cursor {
 }
 binds {
     Mod+Return repeat=false {
-        spawn "ghostty" "+new-window" "-e" "--working-directory=$HOME"
+        spawn "ghostty" "+new-window"
     }
     Mod+Alt+L repeat=false {
         spawn "noctalia" "msg" "session" "lock"
