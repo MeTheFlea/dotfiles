@@ -286,7 +286,7 @@ cursor {
 }
 binds {
     Mod+Return repeat=false {
-        spawn "ghostty" "+new-window"
+        spawn "ghostty" "+new-window" "-e" "--working-directory=$HOME"
     }
     Mod+Alt+L repeat=false {
         spawn "noctalia" "msg" "session" "lock"
@@ -295,7 +295,7 @@ binds {
         spawn "noctalia" "msg" "panel-toggle" "launcher"
     }
     Mod+E repeat=false {
-        spawn "pcmanfm"
+        spawn "thunar"
     }
     XF86AudioRaiseVolume allow-when-locked=true {
         spawn "noctalia" "msg" "volume-up"
